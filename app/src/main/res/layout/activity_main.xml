@@ -6,12 +6,11 @@
     android:layout_height="match_parent"
     tools:context=".mvc.MVCActivity">
 
-    <ListView
+    <android.support.v7.widget.RecyclerView
         android:id="@+id/list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:visibility="gone"
-        android:background="#ffffff"></ListView>
+        app:layoutManager="android.support.v7.widget.LinearLayoutManager"/>
 
     <Button
         android:id="@+id/retryButton"

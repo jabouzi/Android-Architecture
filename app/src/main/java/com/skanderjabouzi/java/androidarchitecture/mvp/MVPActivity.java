@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -12,17 +13,19 @@ import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import com.skanderjabouzi.java.androidarchitecture.ItemClickListener;
 import com.skanderjabouzi.java.androidarchitecture.R;
+import com.skanderjabouzi.java.androidarchitecture.model.UserAdapter1;
 import com.skanderjabouzi.java.androidarchitecture.mvc.CountriesController;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MVPActivity extends AppCompatActivity implements CountryView {
+public class MVPActivity extends AppCompatActivity implements CountryView, ItemClickListener {
 
     private List<String> listValues = new ArrayList<>();
-    private ArrayAdapter<String> adapter;
-    private ListView list;
+    private UserAdapter1 adapter;
+    private RecyclerView list;
     private CountriesPresenter presenter;
     private Button retryButton;
     private ProgressBar progress;
@@ -38,14 +41,9 @@ public class MVPActivity extends AppCompatActivity implements CountryView {
         list = findViewById(R.id.list);
         retryButton = findViewById(R.id.retryButton);
         progress = findViewById(R.id.progress);
-        adapter = new ArrayAdapter<>(this, R.layout.row_layout, R.id.listText, listValues);
+        adapter = new UserAdapter1(listValues);
+        adapter.setClickListener(this);
         list.setAdapter(adapter);
-        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(MVPActivity.this, "You Clicked " + listValues.get(position), Toast.LENGTH_SHORT).show();
-            }
-        });
     }
 
     @Override
@@ -75,5 +73,10 @@ public class MVPActivity extends AppCompatActivity implements CountryView {
 
     public static Intent getIntent(Context context) {
         return new Intent(context, MVPActivity.class);
+    }
+
+    @Override
+    public void onItemClick(View view, int position) {
+        Toast.makeText(MVPActivity.this, "You Clicked " + listValues.get(position), Toast.LENGTH_SHORT).show();
     }
 }

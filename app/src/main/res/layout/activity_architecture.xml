@@ -22,10 +22,19 @@
         android:onClick="onMVP"/>
 
     <Button
+        android:id="@+id/mvvmBinding"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="MVVM (Binding)"
+        android:onClick="onMVVMBinding"/>
+
+    <Button
         android:id="@+id/mvvm"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="MVVM"
+        android:text="MVVM (Live Data)"
         android:onClick="onMVVM"/>
+
+
 
 </LinearLayout>

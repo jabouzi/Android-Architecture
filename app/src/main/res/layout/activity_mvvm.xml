@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.skanderjabouzi.java.androidarchitecture.mvvm1.UserViewModel" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".mvvmbiding.MVVMBindingActivity">
+
+        <!--<ListView-->
+        <!--android:id="@+id/list"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:background="#ffffff"-->
+        <!--android:visibility="@{viewModel.countries != null ? View.VISIBLE : View.GONE}"-->
+        <!--app:data="@{viewModel.countries}"></ListView>-->
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layoutManager="android.support.v7.widget.LinearLayoutManager"
+            android:visibility="@{viewModel.countries != null ? View.VISIBLE : View.GONE}"
+            app:data="@{viewModel.countries}"
+            />
+
+        <Button
+            android:id="@+id/retryButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:onClick="@{() -> viewModel.onRefresh()}"
+            android:text="Retry"
+            android:visibility="@{viewModel.countryError == true ? View.VISIBLE : View.GONE}" />
+
+        <ProgressBar
+            android:id="@+id/progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="@{viewModel.initStatus == true ? View.VISIBLE : View.GONE}" />
+
+    </FrameLayout>
+</layout>

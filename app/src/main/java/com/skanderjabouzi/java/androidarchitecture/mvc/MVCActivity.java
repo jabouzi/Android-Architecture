@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -12,16 +13,18 @@ import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import com.skanderjabouzi.java.androidarchitecture.ItemClickListener;
 import com.skanderjabouzi.java.androidarchitecture.R;
+import com.skanderjabouzi.java.androidarchitecture.model.UserAdapter1;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MVCActivity extends AppCompatActivity {
+public class MVCActivity extends AppCompatActivity implements ItemClickListener {
 
     private List<String> listValues = new ArrayList<>();
-    private ArrayAdapter<String> adapter;
-    private ListView list;
+    private UserAdapter1 adapter;
+    private RecyclerView list;
     private CountriesController controller;
     private Button retryButton;
     private ProgressBar progress;
@@ -37,14 +40,9 @@ public class MVCActivity extends AppCompatActivity {
         list = findViewById(R.id.list);
         retryButton = findViewById(R.id.retryButton);
         progress = findViewById(R.id.progress);
-        adapter = new ArrayAdapter<>(this, R.layout.row_layout, R.id.listText, listValues);
+        adapter = new UserAdapter1(listValues);
+        adapter.setClickListener(this);
         list.setAdapter(adapter);
-        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(MVCActivity.this, "You Clicked " + listValues.get(position), Toast.LENGTH_SHORT).show();
-            }
-        });
     }
 
     public void setValues(List<String> values) {
@@ -73,5 +71,10 @@ public class MVCActivity extends AppCompatActivity {
 
     public static Intent getIntent(Context context) {
         return new Intent(context, MVCActivity.class);
+    }
+
+    @Override
+    public void onItemClick(View view, int position) {
+        Toast.makeText(MVCActivity.this, "You Clicked " + listValues.get(position), Toast.LENGTH_SHORT).show();
     }
 }
