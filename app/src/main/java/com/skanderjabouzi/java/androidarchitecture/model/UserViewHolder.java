@@ -9,7 +9,7 @@ import com.skanderjabouzi.java.androidarchitecture.ItemClickListener;
 import com.skanderjabouzi.java.androidarchitecture.R;
 
 
-public class UserViewHolder extends RecyclerView.ViewHolder  implements View.OnClickListener{
+public class UserViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
     TextView title;
     private ViewGroup container;
     private ItemClickListener mClickListener;

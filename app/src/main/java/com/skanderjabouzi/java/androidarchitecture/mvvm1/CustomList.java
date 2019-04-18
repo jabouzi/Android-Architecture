@@ -30,21 +30,6 @@ public class CustomList extends ArrayAdapter<Integer>  implements BindableAdapte
         this.notifyDataSetChanged();
     }
 
-//    @Override
-//    public void changedPositions(@NotNull Set positions) {
-//        Iterable iterable = (Iterable)positions;
-//        CustomList userAdapter = this;
-//        Iterator iterator = iterable.iterator();
-//
-//        while(iterator.hasNext()) {
-//            Object o = iterator.next();
-//            int p1 = ((Number)o).intValue();
-////            int var7 = false;
-//            userAdapter.notifyDataSetChanged();
-//        }
-//
-//    }
-
     public CustomList(Activity context) {
         super(context, R.layout.list_item);
         this.context = context;

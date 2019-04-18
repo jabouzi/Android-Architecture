@@ -1,0 +1,8 @@
+
+_squid:UnusedPrivateMethod>"3Remove this unused private "fetchCountries" method.(áÉ¼Š8…Òú“ -
+Š"squid:ClassVariableVisibilityCheck"UMake countries a static final constant or non-public and provide accessors if needed.(ßÄàê8…Òú“ -
+"squid:ClassVariableVisibilityCheck"VMake initStatus a static final constant or non-public and provide accessors if needed.(é±ÄŒıÿÿÿÿ8…Òú“ -
+’"squid:ClassVariableVisibilityCheck"XMake countryError a static final constant or non-public and provide accessors if needed.(®ş³®ıÿÿÿÿ8…Òú“ -
+osquid:UselessImportCheck"KRemove this unused import 'com.skanderjabouzi.java.androidarchitecture.BR'.(É³ÅÇ
+Vsquid:UselessImportCheck"-Remove this unused import 'java.util.Random'.(èøÉ›ùÿÿÿÿ
+ksquid:HiddenFieldCheckZ"=Rename "countries" which hides the field declared at line 22.( êé•ùÿÿÿÿ8…Òú“ -

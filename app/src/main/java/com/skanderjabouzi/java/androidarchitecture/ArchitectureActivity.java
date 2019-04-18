@@ -29,6 +29,7 @@ public class ArchitectureActivity extends AppCompatActivity {
         startActivity(MVVMActivity.getIntent(this));
     }
 
-    public void onMVVMBinding(View view) { startActivity(MVVM1Activity.getIntent(this));
+    public void onMVVMBinding(View view) {
+        startActivity(MVVM1Activity.getIntent(this));
     }
 }

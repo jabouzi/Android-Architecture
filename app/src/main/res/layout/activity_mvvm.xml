@@ -17,14 +17,6 @@
         android:layout_height="match_parent"
         tools:context=".mvvmbiding.MVVMBindingActivity">
 
-        <!--<ListView-->
-        <!--android:id="@+id/list"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent"-->
-        <!--android:background="#ffffff"-->
-        <!--android:visibility="@{viewModel.countries != null ? View.VISIBLE : View.GONE}"-->
-        <!--app:data="@{viewModel.countries}"></ListView>-->
-
         <android.support.v7.widget.RecyclerView
             android:id="@+id/recyclerView"
             android:layout_width="match_parent"

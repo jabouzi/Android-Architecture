@@ -1,0 +1,9 @@
+
+gsquid:CommentedOutCodeLine,"<This block of commented-out lines of code should be removed.(ƒ™üÌÿÿÿÿÿ
+Csquid:S1068",Remove this unused "progress" private field.(óÚà´
+Jsquid:S1068".Remove this unused "listValues" private field.(ŽÄçùÿÿÿÿ
+Ksquid:S1068"/Remove this unused "retryButton" private field.(Ùð„Ôÿÿÿÿÿ
+Bsquid:S1068"+Remove this unused "adapter" private field.(£üÄ¼
+gsquid:CommentedOutCodeLine*"<This block of commented-out lines of code should be removed.(ÛýÔ¸þÿÿÿÿ
+Dsquid:S1068"(Remove this unused "list" private field.(­èÕŸÿÿÿÿÿ
+]squid:HiddenFieldCheck'";Rename "adapter" which hides the field declared at line 27.(ì«•£

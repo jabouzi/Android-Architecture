@@ -7,7 +7,6 @@ import android.view.ViewGroup;
 
 import com.skanderjabouzi.java.androidarchitecture.ItemClickListener;
 import com.skanderjabouzi.java.androidarchitecture.R;
-import com.skanderjabouzi.java.androidarchitecture.mvvm1.BindableAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
